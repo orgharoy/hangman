@@ -1,0 +1,302 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contents {
+  width: 100vw;
+  display: block;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.main {
+  background-color: white;
+  border: 2px solid grey;
+}
+
+.man-div {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.man {
+  background-color: white;
+  position: relative;
+  height: 250px;
+  width: 180px;
+}
+
+.man-body {
+  position: absolute;
+  background-color: black;
+  height: 10px;
+  width: 50px;
+}
+
+.man-body:nth-child(1) {
+  bottom: 0px;
+  left: 0px;
+  width: 120px;
+}
+
+.man-body:nth-child(2) {
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 250px;
+}
+.man-body:nth-child(3) {
+  top: 0;
+  left: 0;
+  width: 90px;
+  color: yellow;
+  z-index: 999;
+}
+
+.man-body:nth-child(4) {
+  top: 0px;
+  left: 85px;
+  height: 30px;
+  width: 10px;
+}
+.man-body:nth-child(5) {
+  top: 30px;
+  left: calc(85px - 18px);
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  background-color: white;
+  outline: 10px solid black;
+  display: none;
+}
+.man-body:nth-child(6) {
+  top: calc(30px + 46px);
+  left: 85px;
+  height: 80px;
+  width: 10px;
+  display: none;
+}
+.man-body:nth-child(7) {
+  width: 40px;
+  top: 93px;
+  left: 48px;
+  transform: rotate(20deg);
+  display: none;
+}
+.man-body:nth-child(8) {
+  width: 40px;
+  top: 93px;
+  left: 92px;
+  transform: rotate(160deg);
+  display: none;
+}
+.man-body:nth-child(9) {
+  top: 167px;
+  left: 53px;
+  transform: rotate(120deg);
+  display: none;
+}
+.man-body:nth-child(10) {
+  top: 167px;
+  left: 78px;
+  transform: rotate(60deg);
+  display: none;
+}
+
+.man-body:nth-child(11) {
+  width: 10px;
+  height: 10px;
+  top: 43px;
+  left: 75px;
+
+  border-radius: 50%;
+  display: none;
+}
+.man-body:nth-child(12) {
+  width: 10px;
+  height: 10px;
+  top: 43px;
+  left: 95px;
+
+  border-radius: 50%;
+  display: none;
+}
+.man-body:nth-child(13) {
+  top: 58px;
+  left: 80px;
+  width: 20px;
+  height: 10px; /* as the half of the width */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 3px solid black;
+  border-bottom: 0;
+  background-color: white;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+}
+
+.word {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 20;
+}
+
+.guess-box {
+  border: 2px solid pink;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-box p{
+  color: green;
+  font-size: 2rem;
+}
+
+.show{
+  display: inline-block !important;
+}
+
+/* guesssss */
+
+.guess {
+  margin-top: 50px;
+}
+
+.guess-form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+input {
+  width: 50px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 1px solid rgb(98, 105, 98);
+  border-radius: 5px;
+  height: 50px;
+
+  font-size: 25px;
+  color: green;
+
+  transition: 75ms ease-in-out;
+}
+
+input:focus {
+  border: 2px solid green;
+  outline: none;
+  box-shadow: 0px 0px 15px 3px rgb(94, 235, 94);
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  background-color: rgb(76, 236, 76);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+
+  color: white;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: green;
+}
+
+.winner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.play-again{
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+}
+
+.looser{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+.discarded{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  background-color: white;
+}
+
+.used-items{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.used-letters{
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .contents {
+    width: 100vw;
+    display: block;
+  
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .discarded{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    background-color: white;
+  }
+
+  .guess-box {
+    border: 2px solid pink;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+  }
+  
+  .main{
+    margin: 1rem;
+  }
+  .left{
+    display: none;
+  }
+}
